@@ -1,0 +1,26 @@
+{
+    "Deutschland":
+    {
+        "surNames":[
+            "klaus",
+            "baum"
+        ],
+        "lastNames":[
+            "mayer",
+            "schmidt"
+        ],
+        "cities":[
+            "Berlin",
+            "Hamburg"
+        ],
+        "streets":[
+            "Jägerstraße",
+            "Storchenwege"
+        ],
+        "jobName":[
+            "Bäcker",
+            "Maurer"
+        ]
+
+    }
+}
