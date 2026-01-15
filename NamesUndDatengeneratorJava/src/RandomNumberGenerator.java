@@ -68,18 +68,18 @@ public class RandomNumberGenerator {
     }
 
     public String getRandomName(String country){
-        
+        return "";
     }
 
     public String getRandomSurName(String country){
-
+        return "";
     }
 
     public String getRandomRole(String country){
-
+        return "";
     }
 
     public String getRandomStreet(String country){
-
+        return "";
     }
 }
