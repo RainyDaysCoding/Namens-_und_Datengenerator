@@ -1,12 +1,8 @@
 package Java;
 import java.util.ArrayList;
-import java.util.Objects;
 
 import org.json.*;
-import java.io.File;                  // Import the File class
-import java.io.FileNotFoundException; // Import this class to handle errors
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.Scanner;             // Import the Scanner class to read text files
 
 public class FileManager {
@@ -57,8 +53,9 @@ public class FileManager {
     }
 
     String ReadFile() {
+
         InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("PersonalData.json");
-        
+
         Scanner s = new Scanner(inputStream).useDelimiter("\\A");
         String result = s.hasNext() ? s.next() : "";
         s.close();

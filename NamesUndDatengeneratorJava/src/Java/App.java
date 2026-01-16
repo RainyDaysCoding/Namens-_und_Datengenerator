@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+package Java;
 
-import Java.FileManager;
+import java.util.ArrayList;
 
 public class App {
 

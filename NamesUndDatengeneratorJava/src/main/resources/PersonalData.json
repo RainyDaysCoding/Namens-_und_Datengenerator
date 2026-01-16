@@ -7,7 +7,7 @@
     "role": ["Feuerwehrmann/frau", "Krankenpfleger/in", "Arzt/Ärztin", "Kfz-Mechatroniker/in", "Fachkraft für Lagerlogistik"]
   },
 
-  "Frankreich": {
+  "Frankreich": { 
     "surNames": ["Gabriel", "Léo", "Raphaël", "Arthur", "Louis", "Lucas", "Adam", "Jules", "Maël", "Hugo"],
     "Names": ["Martin", "Bernard", "Thomas", "Petit", "Robert", "Richard", "Durand", "Dubois", "Moreau", "Laurent"],
     "cities": ["Laval", "Le Mans", "Clermont-Ferrand", "Vichy", "Toulon"],
@@ -85,5 +85,5 @@
     "cities": ["Lissabon", "Porto", "Braga", "Coimbra", "Faro"],
     "streets": ["Rua Augusta", "Avenida da Liberdade", "Rua de Santa Catarina", "Rua do Ouro", "Avenida dos Aliados"],
     "role": ["Tourismusmanager/in", "Hotelangestellte/r", "Bürokaufmann/frau", "Servicekraft", "Webdesigner/in"]
-  }
+  } 
 }
