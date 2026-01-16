@@ -1,7 +1,7 @@
 package Test;
 import Java.RandomNumberGenerator;
 
-import org.;
+import org.junit.jupiter.api.Test;
 
 public class RandomNumberGeneratorTest {
     

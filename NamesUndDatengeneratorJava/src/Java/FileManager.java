@@ -1,7 +1,12 @@
+package Java;
 import java.util.ArrayList;
+import java.util.Objects;
+
 import org.json.*;
 import java.io.File;                  // Import the File class
 import java.io.FileNotFoundException; // Import this class to handle errors
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;             // Import the Scanner class to read text files
 
 public class FileManager {
@@ -52,19 +57,12 @@ public class FileManager {
     }
 
     String ReadFile() {
-        File myObj = new File(dataPath + ".json");
-        String jsonString = "";
-        // try-with-resources: Scanner will be closed automatically
-        try (Scanner myReader = new Scanner(myObj)) {
-            while (myReader.hasNextLine()) {
-                String data = myReader.nextLine();
-                jsonString += data;
-            }
-        } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
-            return null;
-        }
-        return jsonString;
+        InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("PersonalData.json");
+        
+        Scanner s = new Scanner(inputStream).useDelimiter("\\A");
+        String result = s.hasNext() ? s.next() : "";
+        s.close();
+
+        return result;
     }
 }
