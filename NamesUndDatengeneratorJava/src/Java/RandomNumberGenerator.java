@@ -1,3 +1,4 @@
+package Java;
 import java.util.Random;
 import java.time.LocalDate;
 
@@ -9,7 +10,7 @@ public class RandomNumberGenerator {
        this.rand = new Random();
     }
 
-    private int generateRandomINTInRage(int min,int max){
+    public int generateRandomINTInRage(int min,int max){
         return rand.nextInt((max - min) + 1) + min;
     }
 
