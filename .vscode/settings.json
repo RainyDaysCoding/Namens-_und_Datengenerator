@@ -1,3 +1,7 @@
 {
-	"java.project.referencedLibraries": ["lib/**/*.jar"]
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "lib/*.jar",
+        "NamesUndDatengeneratorJava/lib/*.jar"
+    ]
 }
