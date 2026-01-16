@@ -1,6 +1,5 @@
 import javax.swing.*;
 
-import java.awt.Button;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -9,6 +8,7 @@ public class App {
     static JFrame frame;
     static ArrayList<String> countries;
     static JComboBox<String> countryBox;
+    static JTextField workerCount;
 
     public static void main(String[] args) throws Exception {
         countries = new ArrayList<>() {
@@ -40,7 +40,7 @@ public class App {
         f.add(countryBox);
 
         JButton button = new JButton("Select Country");
-        button.setBounds(250, 30, 150, 30);
+        button.setBounds(350, 30, 150, 30);
 
         button.addActionListener(new ActionListener() {
 
@@ -51,6 +51,11 @@ public class App {
         });
 
         f.add(button);
+
+        workerCount = new JTextField();
+        workerCount.setBounds(250, 30, 50, 20);
+        
+        f.add(workerCount);
     }
 
     static JFrame ConfigureFrame() {
@@ -72,6 +77,8 @@ public class App {
 
     static void ButtonPressed() {
         String selectedCountry = (String) countryBox.getSelectedItem();
+        int workers = Integer.parseInt(workerCount.getText().length() > 0 ? workerCount.getText() : "1");
         System.out.println("Selected country: " + selectedCountry);
+        System.out.println("Number of workers: " + workers);
     }
 }
