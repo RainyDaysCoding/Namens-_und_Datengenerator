@@ -1,25 +1,77 @@
 import javax.swing.*;
 
+import java.awt.Button;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
 public class App {
+    static JFrame frame;
+    static ArrayList<String> countries;
+    static JComboBox<String> countryBox;
+
     public static void main(String[] args) throws Exception {
-        JFrame frame = new JFrame();
+        countries = new ArrayList<>() {
+            {
+                add("Germany");
+                add("France");
+                add("Italy");
+                add("Spain");
+                add("United Kingdom");
+                add("United States");
+                add("Canada");
+                add("Australia");
+                add("Japan");
+                add("China");
+            }
+        };
+        frame = ConfigureFrame();
+    }
 
-        // Creating instance of JButton
-        JButton button = new JButton(" GFG WebSite Click");
+    static void AddElements(JFrame f) {
+        countryBox = new JComboBox<>();
 
-        // x axis, y axis, width, height
-        button.setBounds(150, 200, 220, 50);
+        countryBox.setBounds(30, 30, 150, 20);
 
-        // adding button in JFrame
-        frame.add(button);
+        for (String country : countries) {
+            countryBox.addItem(country);
+        }
+
+        f.add(countryBox);
+
+        JButton button = new JButton("Select Country");
+        button.setBounds(250, 30, 150, 30);
+
+        button.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ButtonPressed();
+            }
+        });
+
+        f.add(button);
+    }
+
+    static JFrame ConfigureFrame() {
+        JFrame f = new JFrame();
+
+        AddElements(f);
 
         // 400 width and 500 height
-        frame.setSize(500, 600);
+        f.setSize(500, 600);
 
         // using no layout managers
-        frame.setLayout(null);
+        f.setLayout(null);
 
         // making the frame visible
-        frame.setVisible(true);
+        f.setVisible(true);
+
+        return f;
+    }
+
+    static void ButtonPressed() {
+        String selectedCountry = (String) countryBox.getSelectedItem();
+        System.out.println("Selected country: " + selectedCountry);
     }
 }
