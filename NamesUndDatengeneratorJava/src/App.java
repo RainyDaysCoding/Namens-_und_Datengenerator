@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import Java.FileManager;
 
 public class App {
     static JFrame frame;
@@ -11,22 +12,12 @@ public class App {
     static JTextField workerCount;
     static JLabel countryLable;
     static JLabel workerCountLable;
+    static FileManager fileManager;
 
     public static void main(String[] args) throws Exception {
-        countries = new ArrayList<>() {
-            {
-                add("Germany");
-                add("France");
-                add("Italy");
-                add("Spain");
-                add("United Kingdom");
-                add("United States");
-                add("Canada");
-                add("Australia");
-                add("Japan");
-                add("China");
-            }
-        };
+        fileManager = new FileManager();
+        countries = fileManager.getCountryNames();
+
         frame = ConfigureFrame();
     }
 
@@ -58,7 +49,6 @@ public class App {
         workerCount.setBounds(250, 30, 50, 20);
         
         f.add(workerCount);
-
     }
 
     static JFrame ConfigureFrame() {
