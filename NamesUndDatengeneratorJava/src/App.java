@@ -3,28 +3,19 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import Java.FileManager;
 
 public class App {
     static JFrame frame;
     static ArrayList<String> countries;
     static JComboBox<String> countryBox;
     static JTextField workerCount;
+    static FileManager fileManager;
 
     public static void main(String[] args) throws Exception {
-        countries = new ArrayList<>() {
-            {
-                add("Germany");
-                add("France");
-                add("Italy");
-                add("Spain");
-                add("United Kingdom");
-                add("United States");
-                add("Canada");
-                add("Australia");
-                add("Japan");
-                add("China");
-            }
-        };
+        fileManager = new FileManager();
+        countries = fileManager.getCountryNames();
+        
         frame = ConfigureFrame();
     }
 
@@ -78,7 +69,5 @@ public class App {
     static void ButtonPressed() {
         String selectedCountry = (String) countryBox.getSelectedItem();
         int workers = Integer.parseInt(workerCount.getText().length() > 0 ? workerCount.getText() : "1");
-        System.out.println("Selected country: " + selectedCountry);
-        System.out.println("Number of workers: " + workers);
     }
 }
