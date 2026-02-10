@@ -1,0 +1,89 @@
+{
+  "Deutschland": {
+    "surNames": ["Emilia", "Sophia", "Emma", "Hannah", "Mia", "Noah", "Matteo", "Elias", "Luca", "Leon"],
+    "Names": ["Müller", "Schmidt", "Schneider", "Fischer", "Weber", "Meyer", "Wagner", "Bauer", "Schulz", "Hoffmann"],
+    "cities": ["Berlin", "Hamburg", "München", "Bonn", "Neumünster"],
+    "streets": ["Jägerstraße", "Storchenweg", "Markgrafendamm", "Puschkinallee", "Bulgarische Str."],
+    "role": ["Feuerwehrmann/frau", "Krankenpfleger/in", "Arzt/Ärztin", "Kfz-Mechatroniker/in", "Fachkraft für Lagerlogistik"]
+  },
+
+  "Frankreich": { 
+    "surNames": ["Gabriel", "Léo", "Raphaël", "Arthur", "Louis", "Lucas", "Adam", "Jules", "Maël", "Hugo"],
+    "Names": ["Martin", "Bernard", "Thomas", "Petit", "Robert", "Richard", "Durand", "Dubois", "Moreau", "Laurent"],
+    "cities": ["Laval", "Le Mans", "Clermont-Ferrand", "Vichy", "Toulon"],
+    "streets": ["Av. Saint-Pierre", "Rue de la Couture", "Bd Arago", "Rue Descartes", "All. des Platanes"],
+    "role": ["Küchenhilfe", "Softwareentwickler/in", "Projektmanager/in", "Key Account Manager", "Lehrkraft"]
+  },
+
+  "Island": {
+    "surNames": ["Jón", "Aron", "Magnús", "Einar", "Bjarni", "Ólafur", "Kristján", "Sigurður", "Hákon", "Guðmundur"],
+    "Names": ["Jónsson", "Magnússon", "Einarsson", "Bjarnason", "Ólafsson", "Kristjánsson", "Sigurðsson", "Hákonarson", "Guðmundsson", "Pétursson"],
+    "cities": ["Reykjavík", "Akureyri", "Hafnarfjörður", "Kópavogur", "Selfoss"],
+    "streets": ["Laugavegur", "Skólavörðustígur", "Hverfisgata", "Borgartún", "Suðurlandsbraut"],
+    "role": ["Fischer/in", "Elektriker/in", "Tourguide", "Softwareentwickler/in", "Mechaniker/in"]
+  },
+
+  "Österreich": {
+    "surNames": ["Lukas", "Jakob", "Felix", "Paul", "David", "Anna", "Marie", "Lea", "Sophia", "Laura"],
+    "Names": ["Gruber", "Huber", "Bauer", "Wagner", "Mayer", "Hofer", "Leitner", "Fuchs", "Egger", "Pichler"],
+    "cities": ["Wien", "Graz", "Linz", "Salzburg", "Innsbruck"],
+    "streets": ["Mariahilfer Straße", "Landstraße", "Hauptplatz", "Bahnhofstraße", "Ringstraße"],
+    "role": ["Bürokaufmann/frau", "Lehrer/in", "Installateur/in", "Pflegefachkraft", "Verkäufer/in"]
+  },
+
+  "Italien": {
+    "surNames": ["Luca", "Marco", "Matteo", "Giovanni", "Alessandro", "Francesca", "Giulia", "Sofia", "Martina", "Chiara"],
+    "Names": ["Rossi", "Russo", "Ferrari", "Esposito", "Bianchi", "Romano", "Gallo", "Costa", "Fontana", "Conti"],
+    "cities": ["Rom", "Mailand", "Neapel", "Turin", "Florenz"],
+    "streets": ["Via Roma", "Via Milano", "Corso Italia", "Via Garibaldi", "Viale Europa"],
+    "role": ["Koch/Köchin", "Architekt/in", "Ingenieur/in", "Einzelhandelskaufmann/frau", "Tourismusfachkraft"]
+  },
+
+  "Griechenland": {
+    "surNames": ["Giorgos", "Nikos", "Dimitris", "Kostas", "Yannis", "Maria", "Eleni", "Anna", "Sofia", "Katerina"],
+    "Names": ["Papadopoulos", "Nikolaidis", "Georgiou", "Dimitriou", "Ioannou", "Kostopoulos", "Pappas", "Vasiliou", "Christou", "Antonopoulos"],
+    "cities": ["Athen", "Thessaloniki", "Patras", "Heraklion", "Larisa"],
+    "streets": ["Odos Ermou", "Odos Stadiou", "Odos Panepistimiou", "Odos Venizelou", "Odos Athinas"],
+    "role": ["Hotelangestellte/r", "Bauarbeiter/in", "Lehrer/in", "Verkäufer/in", "Seemann/frau"]
+  },
+
+  "Bulgarien": {
+    "surNames": ["Ivan", "Georgi", "Dimitar", "Nikolay", "Petar", "Maria", "Elena", "Ivanka", "Desislava", "Radostina"],
+    "Names": ["Ivanov", "Petrov", "Georgiev", "Dimitrov", "Nikolov", "Kolev", "Stoyanov", "Hristov", "Todorov", "Vasilev"],
+    "cities": ["Sofia", "Plowdiw", "Warna", "Burgas", "Russe"],
+    "streets": ["Vitosha Blvd", "Tsar Simeon St.", "Shipka St.", "Bulgaria Blvd", "Slivnitsa Blvd"],
+    "role": ["IT-Spezialist/in", "Buchhalter/in", "Maschinenbediener/in", "Lagerarbeiter/in", "Kundendienst"]
+  },
+
+  "Bosnien und Herzegowina": {
+    "surNames": ["Amir", "Adnan", "Emir", "Haris", "Mirza", "Amina", "Lejla", "Sara", "Emina", "Azra"],
+    "Names": ["Hadžić", "Kovačević", "Marković", "Petrović", "Mehmedović", "Alić", "Smajlović", "Dedić", "Begić", "Ibrahimović"],
+    "cities": ["Sarajevo", "Mostar", "Banja Luka", "Tuzla", "Zenica"],
+    "streets": ["Titova", "Zmaja od Bosne", "Maršala Tita", "Kralja Tvrtka", "Aleja Alije Izetbegovića"],
+    "role": ["Elektriker/in", "LKW-Fahrer/in", "Bauarbeiter/in", "Verkäufer/in", "Verwaltungsangestellte/r"]
+  },
+
+  "Lettland": {
+    "surNames": ["Janis", "Arturs", "Andris", "Edgars", "Martins", "Laura", "Anna", "Kristine", "Elina", "Liga"],
+    "Names": ["Berzins", "Kalnins", "Ozols", "Liepa", "Krumins", "Balodis", "Ziedins", "Eglitis", "Vilks", "Prieditis"],
+    "cities": ["Riga", "Daugavpils", "Liepaja", "Jelgava", "Jurmala"],
+    "streets": ["Brivibas iela", "Valdemara iela", "Maskavas iela", "Elizabetes iela", "Terbatas iela"],
+    "role": ["Logistiker/in", "Büroangestellte/r", "Programmierer/in", "Verkäufer/in", "Techniker/in"]
+  },
+
+  "Litauen": {
+    "surNames": ["Jonas", "Mantas", "Tomas", "Lukas", "Paulius", "Aiste", "Ruta", "Greta", "Ieva", "Monika"],
+    "Names": ["Kazlauskas", "Jankauskas", "Petrauskas", "Zukauskas", "Vaitkus", "Pocius", "Butkus", "Savickas", "Kavaliauskas", "Stankevicius"],
+    "cities": ["Vilnius", "Kaunas", "Klaipeda", "Siauliai", "Panevezys"],
+    "streets": ["Gedimino pr.", "Pilies g.", "Vilniaus g.", "Kauno g.", "Laisves al."],
+    "role": ["Ingenieur/in", "IT-Administrator/in", "Buchhalter/in", "Lagerfachkraft", "Kundenbetreuer/in"]
+  },
+
+  "Portugal": {
+    "surNames": ["João", "Miguel", "Pedro", "Tiago", "Rafael", "Ana", "Maria", "Inês", "Sofia", "Beatriz"],
+    "Names": ["Silva", "Santos", "Ferreira", "Pereira", "Costa", "Rodrigues", "Martins", "Gomes", "Ribeiro", "Alves"],
+    "cities": ["Lissabon", "Porto", "Braga", "Coimbra", "Faro"],
+    "streets": ["Rua Augusta", "Avenida da Liberdade", "Rua de Santa Catarina", "Rua do Ouro", "Avenida dos Aliados"],
+    "role": ["Tourismusmanager/in", "Hotelangestellte/r", "Bürokaufmann/frau", "Servicekraft", "Webdesigner/in"]
+  } 
+}

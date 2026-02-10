@@ -15,6 +15,7 @@ public class RandomNumberGenerator {
     }
 
     public int generateZipCode(){
+        
         return generateRandomINTInRage(10000,99999);
     }
 
