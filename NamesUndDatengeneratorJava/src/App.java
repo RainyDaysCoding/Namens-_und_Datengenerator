@@ -9,6 +9,8 @@ public class App {
     static ArrayList<String> countries;
     static JComboBox<String> countryBox;
     static JTextField workerCount;
+    static JLabel countryLable;
+    static JLabel workerCountLable;
 
     public static void main(String[] args) throws Exception {
         countries = new ArrayList<>() {
@@ -39,7 +41,7 @@ public class App {
 
         f.add(countryBox);
 
-        JButton button = new JButton("Select Country");
+        JButton button = new JButton("Generate");
         button.setBounds(350, 30, 150, 30);
 
         button.addActionListener(new ActionListener() {
@@ -56,6 +58,7 @@ public class App {
         workerCount.setBounds(250, 30, 50, 20);
         
         f.add(workerCount);
+
     }
 
     static JFrame ConfigureFrame() {
@@ -64,7 +67,7 @@ public class App {
         AddElements(f);
 
         // 400 width and 500 height
-        f.setSize(500, 600);
+        f.setSize(550, 400);
 
         // using no layout managers
         f.setLayout(null);
