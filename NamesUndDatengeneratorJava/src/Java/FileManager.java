@@ -1,15 +1,16 @@
 package Java;
+
 import java.util.ArrayList;
 
 import org.json.*;
 import java.io.InputStream;
-import java.util.Scanner;             // Import the Scanner class to read text files
+import java.util.Scanner; // Import the Scanner class to read text files
 
 public class FileManager {
     RandomNumberGenerator rng;
     ArrayList<CountryData> countryData;
 
-    String dataPath = "./Data/PersonalData";
+    String fileName = "PersonalData.json";
     String savePath = "C:\\GeneratorData\\Output";
 
     public FileManager() {
@@ -18,9 +19,9 @@ public class FileManager {
     }
 
     public ArrayList<String> getCountryNames() {
-        
+
         ArrayList<String> countryNames = new ArrayList<>();
-        
+
         for (CountryData country : countryData) {
             countryNames.add(country.getCountry());
         }
@@ -40,21 +41,17 @@ public class FileManager {
         String jsonString = ReadFile();
         JSONObject obj = new JSONObject(jsonString);
 
-        String debug = obj.toString();
-        System.out.println(debug);
-
-        // String pageName = obj.getJSONObject("pageInfo").getString("pageName");
-
-        // JSONArray arr = obj.getJSONArray("posts"); // notice that `"posts": [...]`
-        // for (int i = 0; i < arr.length(); i++)
-        // {
-        //     String post_id = arr.getJSONObject(i).getString("post_id");
+        // for (var o : obj.) {
+        // System.out.println(o);
         // }
+
+        // countryData.add(new CountryData(jsonString, getCountryNames(),
+        // getCountryNames(), getCountryNames(), getCountryNames(), getCountryNames()))
     }
 
     String ReadFile() {
 
-        InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("PersonalData.json");
+        InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName);
 
         Scanner s = new Scanner(inputStream).useDelimiter("\\A");
         String result = s.hasNext() ? s.next() : "";
