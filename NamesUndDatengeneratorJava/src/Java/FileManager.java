@@ -41,9 +41,9 @@ public class FileManager {
         String jsonString = ReadFile();
         JSONObject obj = new JSONObject(jsonString);
 
-        // for (var o : obj.) {
-        // System.out.println(o);
-        // }
+        for (String country : obj.keySet()) {
+            System.out.println(country);
+        }
 
         // countryData.add(new CountryData(jsonString, getCountryNames(),
         // getCountryNames(), getCountryNames(), getCountryNames(), getCountryNames()))
