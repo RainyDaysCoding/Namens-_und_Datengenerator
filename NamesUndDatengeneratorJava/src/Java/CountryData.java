@@ -66,4 +66,24 @@ public class CountryData {
     public void setStreets(ArrayList<String> streets) {
         this.streets = streets;
     }
+
+    public int getNamesLength() {
+        return names.size(); 
+    }
+
+    public int getSurnamesLength() {
+        return surNames.size(); 
+    }
+
+    public int getRoleLength() {
+        return roles.size(); 
+    }
+
+    public int getStreetLength() {
+        return streets.size(); 
+    }
+
+    public int getCitiesLength() {
+        return cities.size(); 
+    }
 }

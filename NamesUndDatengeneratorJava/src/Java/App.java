@@ -16,7 +16,7 @@ public class App {
     }
 
     void generateList() {
-
+            
     } 
 
     void add(CompanyWorker c) {

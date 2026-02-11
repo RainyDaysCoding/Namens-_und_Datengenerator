@@ -52,8 +52,8 @@ public class RandomNumberGenerator {
 
     }
 
-    public int generateSalary(){
-        return generateRandomINTInRage(1500, 10000);
+    public String generateSalary(){
+        return String.valueOf(generateRandomINTInRage(1500, 10000));
     }
 
     public String generateHouseNumber(){
@@ -69,19 +69,23 @@ public class RandomNumberGenerator {
         return Integer.toString(number) + " "+ letter[temp];
     }
 
-    public String getRandomName(String country){
-        return "";
+    public String getRandomName(CountryData countryData){
+        return countryData.getNames().get(generateRandomINTInRage(0, countryData.getNamesLength()));
     }
 
-    public String getRandomSurName(String country){
-        return "";
+    public String getRandomSurName(CountryData countryData){
+        return countryData.getNames().get(generateRandomINTInRage(0, countryData.getSurnamesLength()));
     }
 
-    public String getRandomRole(String country){
-        return "";
+    public String getRandomRole(CountryData countryData){
+        return countryData.getNames().get(generateRandomINTInRage(0, countryData.getRoleLength()));
     }
 
-    public String getRandomStreet(String country){
-        return "";
+    public String getRandomStreet(CountryData countryData){
+        return countryData.getNames().get(generateRandomINTInRage(0, countryData.getStreetLength()));
+    }
+
+    public String getRandomCity(CountryData countryData){
+        return countryData.getCities().get(generateRandomINTInRage(0, countryData.getCitiesLength()));
     }
 }

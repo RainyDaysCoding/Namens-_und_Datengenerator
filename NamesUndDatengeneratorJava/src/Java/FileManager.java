@@ -1,9 +1,16 @@
 package Java;
 
 import java.util.ArrayList;
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import org.json.*;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.StandardOpenOption;
+import java.nio.file.attribute.FileAttribute;
 import java.util.Scanner; // Import the Scanner class to read text files
 
 public class FileManager {
@@ -11,7 +18,7 @@ public class FileManager {
     ArrayList<CountryData> countryData;
 
     String fileName = "PersonalData.json";
-    String savePath = "C:\\GeneratorData\\Output";
+    String savePath = "C:\\GeneratorData\\output.csv";
 
     public FileManager() {
         rng = new RandomNumberGenerator();
@@ -34,8 +41,33 @@ public class FileManager {
         // return complete companyWorker
     }
 
-    public boolean writeWorkersToCSV(ArrayList<CompanyWorker> workers) {
-        return true;
+    public boolean writeWorkersToCSV(String country, int amountToGenerate) {
+
+        String csvString = "surname, name, city, street, housenumber, role, zipcode, birthdate, salary\n";
+        CountryData cData = countryData.stream().filter(n -> n.getCountry().equals(country)).findFirst().orElse(null);
+        for (int i = 0; i < amountToGenerate; i++) {
+            csvString += rng.getRandomSurName(cData) + ", ";
+            csvString += rng.getRandomName(cData) + ", ";
+            csvString += rng.getRandomCity(cData) + ", ";
+            csvString += rng.getRandomStreet(cData) + ", ";
+            csvString += rng.generateHouseNumber() + ", ";
+            csvString += rng.getRandomRole(cData) + ", ";
+            csvString += rng.generateZipCode() + ", ";
+            csvString += rng.generatesBirthdate() + ", ";
+            csvString += rng.generateSalary();
+            csvString += "\n";
+        }
+
+        // save csv
+        Path path = Path.of(savePath);
+        try {
+            Path csvFile = Files.createFile(path);   
+            Files.writeString(csvFile, csvString, StandardCharsets.UTF_8, StandardOpenOption.WRITE);
+            return true;
+        } catch (IOException e) {
+            // TODO: handle exception
+            return false;
+        }
     }
 
     ArrayList<String> ConvertJSONArrayToArrayList(JSONArray jsonArray) {
