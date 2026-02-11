@@ -18,7 +18,7 @@ public class FileManager {
     ArrayList<CountryData> countryData;
 
     String fileName = "PersonalData.json";
-    String savePath = "C:\\GeneratorData\\output.csv";
+    String savePath = "C:\\GeneratorData\\output";
 
     public FileManager() {
         rng = new RandomNumberGenerator();
@@ -59,7 +59,7 @@ public class FileManager {
         }
 
         // save csv
-        Path path = Path.of(savePath);
+        Path path = Path.of(savePath + "-" + country + "-" + amountToGenerate + ".csv");
         try {
             Path csvFile = Files.createFile(path);   
             Files.writeString(csvFile, csvString, StandardCharsets.UTF_8, StandardOpenOption.WRITE);
