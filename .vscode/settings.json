@@ -1,0 +1,10 @@
+{
+    "java.project.referencedLibraries": [
+        "c:\\Users\\Jonas Jentsch\\Documents\\Berufsschule\\LF12\\Namens-_und_Datengenerator\\NamesUndDatengeneratorJava\\lib\\junit-platform-console-standalone-1.14.2.jar",
+        "c:\\Users\\Jonas Jentsch\\Documents\\Berufsschule\\LF12\\Namens-_und_Datengenerator\\NamesUndDatengeneratorJava\\lib\\json-20251224.jar"
+    ],
+    "java.project.sourcePaths": [
+        "NamesUndDatengeneratorJava\\src",
+        "NamesUndDatengeneratorJava\\src\\main\\resources"
+    ]
+}
