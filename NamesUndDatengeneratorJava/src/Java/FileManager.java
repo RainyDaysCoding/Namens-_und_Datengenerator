@@ -1,26 +1,28 @@
 package Java;
+
 import java.util.ArrayList;
 
 import org.json.*;
 import java.io.InputStream;
-import java.util.Scanner;             // Import the Scanner class to read text files
+import java.util.Scanner; // Import the Scanner class to read text files
 
 public class FileManager {
     RandomNumberGenerator rng;
     ArrayList<CountryData> countryData;
 
-    String dataPath = "./Data/PersonalData";
+    String fileName = "PersonalData.json";
     String savePath = "C:\\GeneratorData\\Output";
 
     public FileManager() {
         rng = new RandomNumberGenerator();
+        countryData = new ArrayList<CountryData>();
         loadJSONData();
     }
 
     public ArrayList<String> getCountryNames() {
-        
+
         ArrayList<String> countryNames = new ArrayList<>();
-        
+
         for (CountryData country : countryData) {
             countryNames.add(country.getCountry());
         }
@@ -36,25 +38,34 @@ public class FileManager {
         return true;
     }
 
+    ArrayList<String> ConvertJSONArrayToArrayList(JSONArray jsonArray) {
+        ArrayList<String> list = new ArrayList<String>();
+        if (jsonArray != null) {
+            int len = jsonArray.length();
+            for (int i=0;i<len;i++) { 
+                list.add(jsonArray.get(i).toString());
+            } 
+        }
+        return list;
+    }
+
     void loadJSONData() {
         String jsonString = ReadFile();
         JSONObject obj = new JSONObject(jsonString);
 
-        String debug = obj.toString();
-        System.out.println(debug);
-
-        // String pageName = obj.getJSONObject("pageInfo").getString("pageName");
-
-        // JSONArray arr = obj.getJSONArray("posts"); // notice that `"posts": [...]`
-        // for (int i = 0; i < arr.length(); i++)
-        // {
-        //     String post_id = arr.getJSONObject(i).getString("post_id");
-        // }
+        for (String country : obj.keySet()) {
+            ArrayList<String> surnames = ConvertJSONArrayToArrayList(new JSONArray(new JSONObject(obj.get(country).toString()).get("surNames").toString()));
+            ArrayList<String> names = ConvertJSONArrayToArrayList(new JSONArray(new JSONObject(obj.get(country).toString()).get("names").toString()));
+            ArrayList<String> roles = ConvertJSONArrayToArrayList(new JSONArray(new JSONObject(obj.get(country).toString()).get("roles").toString()));
+            ArrayList<String> cities = ConvertJSONArrayToArrayList(new JSONArray(new JSONObject(obj.get(country).toString()).get("cities").toString()));
+            ArrayList<String> streets = ConvertJSONArrayToArrayList(new JSONArray(new JSONObject(obj.get(country).toString()).get("streets").toString()));
+            countryData.add(new CountryData(country, surnames, names, roles, cities, streets));
+        }
     }
 
     String ReadFile() {
 
-        InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("PersonalData.json");
+        InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName);
 
         Scanner s = new Scanner(inputStream).useDelimiter("\\A");
         String result = s.hasNext() ? s.next() : "";
