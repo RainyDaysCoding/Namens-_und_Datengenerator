@@ -52,8 +52,8 @@ public class RandomNumberGenerator {
 
     }
 
-    public String generateSalary(){
-        return String.valueOf(generateRandomINTInRage(1500, 10000));
+    public int generateSalary(){
+        return generateRandomINTInRage(1500, 10000);
     }
 
     public String generateHouseNumber(){
