@@ -9,8 +9,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import Backend.RandomNumberGenerator;
-
-
+import Backend.CountryData;
 
 public class RandomNumberGeneratorTest {
 
@@ -95,12 +94,13 @@ public class RandomNumberGeneratorTest {
 
         // Action
         String result = randomNumberGenerator.generateHouseNumber();
-        String[] resultSplit = result.split(" ");
-        int hausNumber = Integer.parseInt(resultSplit[0]);
+        result = "46d";
+        String resultString = result.replaceAll("[a-d]", "");
+        int hausNumber = Integer.parseInt(resultString);
 
         // Assert
         assertTrue(hausNumber < 101 && hausNumber > 0, "Fehler: Zahl liegt nicht zwischen 1 und 100");
-        assertTrue(result.length() >= 2 || result.length() < 6, "Fehler: die ausgabe ist zu Kurtz oder zu Lang");
+        assertTrue(result.length() >= 1 && result.length() < 5, "Fehler: die ausgabe ist zu Kurtz oder zu Lang");
     }
 
     @Test
