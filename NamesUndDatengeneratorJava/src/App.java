@@ -107,7 +107,6 @@ public class App {
     static void ButtonPressed() {
         String selectedCountry = (String) countryBox.getSelectedItem();
         int workers = Integer.parseInt(workerCount.getText().length() > 0 ? workerCount.getText() : "1");
-        System.out.println("Selected country: " + selectedCountry);
-        System.out.println("Number of workers: " + workers);
+        fileManager.writeWorkersToCSV(selectedCountry, workers);
     }
 }
