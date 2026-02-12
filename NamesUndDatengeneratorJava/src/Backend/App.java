@@ -15,8 +15,8 @@ public class App {
         // var test = fileManager.getCountryNames();
     }
 
-    void generateList() {
-            
+    void generateList(String country, int amount) {
+        fileManager.writeWorkersToCSV(country, amount);
     } 
 
     void add(CompanyWorker c) {
