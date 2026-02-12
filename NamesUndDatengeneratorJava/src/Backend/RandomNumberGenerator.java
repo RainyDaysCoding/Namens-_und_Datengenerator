@@ -1,4 +1,4 @@
-package Java;
+package Backend;
 import java.util.Random;
 import java.time.LocalDate;
 
@@ -10,16 +10,16 @@ public class RandomNumberGenerator {
        this.rand = new Random();
     }
 
-    public int generateRandomINTInRage(int min,int max){
+    public int generateRandomINTInRage(int min,int max) {
         return rand.nextInt((max - min) + 1) + min;
     }
 
-    public int generateZipCode(){
+    public int generateZipCode() {
         
         return generateRandomINTInRage(10000,99999);
     }
 
-    public String generatesBirthdate(){
+    public String generatesBirthdate() {
         int day,month,year;
         String result;
         //Generiert ein jahr Monat und Tag
@@ -58,7 +58,7 @@ public class RandomNumberGenerator {
 
     public String generateHouseNumber(){
         int temp = 0, number;
-        String[] letter = {"","A","B","C","D"};
+        String[] letter = {"","a","b","c","d"};
 
         if(generateRandomINTInRage(1, 2) % 2 == 0){
             temp = generateRandomINTInRage(0, 4);
@@ -66,26 +66,26 @@ public class RandomNumberGenerator {
 
         number = generateRandomINTInRage(1, 100);
 
-        return Integer.toString(number) + " "+ letter[temp];
+        return Integer.toString(number) + ""+ letter[temp];
     }
 
     public String getRandomName(CountryData countryData){
-        return countryData.getNames().get(generateRandomINTInRage(0, countryData.getNamesLength()));
+        return countryData.getNames().get(generateRandomINTInRage(0, countryData.getNamesLength() - 1));
     }
 
     public String getRandomSurName(CountryData countryData){
-        return countryData.getNames().get(generateRandomINTInRage(0, countryData.getSurnamesLength()));
+        return countryData.getSurNames().get(generateRandomINTInRage(0, countryData.getSurnamesLength() - 1));
     }
 
     public String getRandomRole(CountryData countryData){
-        return countryData.getNames().get(generateRandomINTInRage(0, countryData.getRoleLength()));
+        return countryData.getRoles().get(generateRandomINTInRage(0, countryData.getRoleLength() - 1));
     }
 
     public String getRandomStreet(CountryData countryData){
-        return countryData.getNames().get(generateRandomINTInRage(0, countryData.getStreetLength()));
+        return countryData.getStreets().get(generateRandomINTInRage(0, countryData.getStreetLength() - 1));
     }
 
     public String getRandomCity(CountryData countryData){
-        return countryData.getCities().get(generateRandomINTInRage(0, countryData.getCitiesLength()));
+        return countryData.getCities().get(generateRandomINTInRage(0, countryData.getCitiesLength() - 1));
     }
 }

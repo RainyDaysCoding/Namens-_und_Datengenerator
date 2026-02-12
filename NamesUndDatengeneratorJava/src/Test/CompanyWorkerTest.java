@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 import org.junit.Test;
 
-import Java.CompanyWorker;
+import Backend.CompanyWorker;
 
 public class CompanyWorkerTest {
 

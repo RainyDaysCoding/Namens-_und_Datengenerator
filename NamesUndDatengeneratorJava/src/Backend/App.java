@@ -1,4 +1,4 @@
-package Java;
+package Backend;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         fileManager = new FileManager();
-        var test = fileManager.getCountryNames();
+        // var test = fileManager.getCountryNames();
     }
 
     void generateList() {
