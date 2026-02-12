@@ -20,36 +20,6 @@ public class App {
         frame = ConfigureFrame();
     }
 
-//    static void AddElements(JFrame f) {
-//        countryBox = new JComboBox<>();
-//
-//        countryBox.setBounds(30, 30, 150, 20);
-//
-//        for (String country : countries) {
-//            countryBox.addItem(country);
-//        }
-//
-//        f.add(countryBox);
-//
-//        JButton button = new JButton("Generate");
-//        button.setBounds(350, 30, 150, 30);
-//
-//        button.addActionListener(new ActionListener() {
-//
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//                ButtonPressed();
-//            }
-//        });
-//
-//        f.add(button);
-//
-//        workerCount = new JTextField();
-//        workerCount.setBounds(250, 30, 50, 20);
-//
-//        f.add(workerCount);
-//    }
-
     static void ConfigureLayout(JFrame f){
         Panel panel = new Panel();
         GridBagLayout gbl = new GridBagLayout();
@@ -72,11 +42,13 @@ public class App {
         gbc.gridx = 2;
         gbc.gridy = 1;
         gbc.gridwidth = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         workerCount = createTextField();
-        workerCount.setBounds(0,0,50,20);
+        workerCount.setBounds(250,30,50,20);
         panel.add(workerCount, gbc);
         gbc.gridx = 1;
         gbc.gridy = 2;
+        gbc.fill = GridBagConstraints.NONE;
         JButton button = createButton("Generieren");
         button.addActionListener(new ActionListener() {
             @Override
