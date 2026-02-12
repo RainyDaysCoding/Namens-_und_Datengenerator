@@ -18,6 +18,7 @@ public class FileManager {
     ArrayList<CountryData> countryData;
 
     String fileName = "PersonalData.json";
+    String directoryPath = "C:\\GeneratorData";
     String savePath = "C:\\GeneratorData\\output";
 
     public FileManager() {
@@ -43,17 +44,17 @@ public class FileManager {
 
     public boolean writeWorkersToCSV(String country, int amountToGenerate) {
 
-        String csvString = "surname, name, city, street, housenumber, role, zipcode, birthdate, salary\n";
+        String csvString = "surname,name,city,street,housenumber,role,zipcode,birthdate,salary\n";
         CountryData cData = countryData.stream().filter(n -> n.getCountry().equals(country)).findFirst().orElse(null);
         for (int i = 0; i < amountToGenerate; i++) {
-            csvString += rng.getRandomSurName(cData) + ", ";
-            csvString += rng.getRandomName(cData) + ", ";
-            csvString += rng.getRandomCity(cData) + ", ";
-            csvString += rng.getRandomStreet(cData) + ", ";
-            csvString += rng.generateHouseNumber() + ", ";
-            csvString += rng.getRandomRole(cData) + ", ";
-            csvString += rng.generateZipCode() + ", ";
-            csvString += rng.generatesBirthdate() + ", ";
+            csvString += rng.getRandomSurName(cData) + ",";
+            csvString += rng.getRandomName(cData) + ",";
+            csvString += rng.getRandomCity(cData) + ",";
+            csvString += rng.getRandomStreet(cData) + ",";
+            csvString += rng.generateHouseNumber() + ",";
+            csvString += rng.getRandomRole(cData) + ",";
+            csvString += rng.generateZipCode() + ",";
+            csvString += rng.generatesBirthdate() + ",";
             csvString += rng.generateSalary();
             csvString += "\n";
         }
@@ -61,6 +62,7 @@ public class FileManager {
         // save csv
         Path path = Path.of(savePath + "-" + country + "-" + amountToGenerate + ".csv");
         try {
+            new File(directoryPath).mkdirs();
             Path csvFile = Files.createFile(path);   
             Files.writeString(csvFile, csvString, StandardCharsets.UTF_8, StandardOpenOption.WRITE);
             return true;
@@ -93,6 +95,9 @@ public class FileManager {
             ArrayList<String> streets = ConvertJSONArrayToArrayList(new JSONArray(new JSONObject(obj.get(country).toString()).get("streets").toString()));
             countryData.add(new CountryData(country, surnames, names, roles, cities, streets));
         }
+
+        // DEBUG - REMOVE BEFORE LAUNCH
+        // writeWorkersToCSV("Deutschland", 15);
     }
 
     String ReadFile() {
