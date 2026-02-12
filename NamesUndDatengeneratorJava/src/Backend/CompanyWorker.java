@@ -1,4 +1,5 @@
-package Java;
+package Backend;
+
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -14,7 +15,8 @@ public class CompanyWorker {
     int salary;
     int zipCode;
 
-    public CompanyWorker(String surname, String name, String role, String country, String city, String street, LocalDate birthDate, String houseNumber, int salary, int zipCode) {
+    public CompanyWorker(String surname, String name, String role, String country, String city, String street,
+            LocalDate birthDate, String houseNumber, int salary, int zipCode) {
         this.surname = surname;
         this.name = name;
         this.role = role;
@@ -28,7 +30,7 @@ public class CompanyWorker {
     }
 
     public int calculateAge() {
-        return Period.between(LocalDate.now(), this.birthDate).getYears();
+        return Math.abs(Period.between(LocalDate.now(), this.birthDate).getYears());
     }
 
     public String getSurname() {
