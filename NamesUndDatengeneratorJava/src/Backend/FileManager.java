@@ -10,7 +10,6 @@ import org.json.*;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.StandardOpenOption;
-import java.nio.file.attribute.FileAttribute;
 import java.util.Scanner; // Import the Scanner class to read text files
 
 public class FileManager {
@@ -36,10 +35,6 @@ public class FileManager {
         }
 
         return countryNames;
-    }
-
-    public void getWorkerFromFile(String country) {
-        // return complete companyWorker
     }
 
     public boolean writeWorkersToCSV(String country, int amountToGenerate) {
