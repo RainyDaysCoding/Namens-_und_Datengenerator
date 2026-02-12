@@ -1,9 +1,11 @@
 import javax.swing.*;
 
+import java.awt.*;
+import Backend.FileManager;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import Java.FileManager;
 
 public class App {
     static JFrame frame;
@@ -15,47 +17,83 @@ public class App {
     public static void main(String[] args) throws Exception {
         fileManager = new FileManager();
         countries = fileManager.getCountryNames();
-        
+
         frame = ConfigureFrame();
     }
 
-    static void AddElements(JFrame f) {
-        countryBox = new JComboBox<>();
+    static void ConfigureLayout(JFrame f){
+        Panel panel = new Panel();
+        GridBagLayout gbl = new GridBagLayout();
+        GridBagConstraints gbc = new GridBagConstraints();
 
-        countryBox.setBounds(30, 30, 150, 20);
+        panel.setLayout(gbl);
 
-        for (String country : countries) {
-            countryBox.addItem(country);
-        }
-
-        f.add(countryBox);
-
-        JButton button = new JButton("Select Country");
-        button.setBounds(350, 30, 150, 30);
-
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.insets = new Insets(10,10,10,10);
+        panel.add(createLabel("Land: "), gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        panel.add(createLabel("Datensätze: "), gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.gridwidth = 2;
+        countryBox = createCombobox(countries);
+        panel.add(countryBox, gbc);
+        gbc.gridx = 2;
+        gbc.gridy = 1;
+        gbc.gridwidth = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        workerCount = createTextField();
+        workerCount.setBounds(250,30,50,20);
+        panel.add(workerCount, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        gbc.fill = GridBagConstraints.NONE;
+        JButton button = createButton("Generieren");
         button.addActionListener(new ActionListener() {
-
             @Override
             public void actionPerformed(ActionEvent e) {
                 ButtonPressed();
             }
         });
+        panel.add(button, gbc);
 
-        f.add(button);
+        f.add(panel);
+        f.pack();
+    }
 
-        workerCount = new JTextField();
-        workerCount.setBounds(250, 30, 50, 20);
-        
-        f.add(workerCount);
+    static JLabel createLabel (String txt){
+        JLabel label = new JLabel();
+        label.setText(txt);
+        label.setOpaque(true);
+        return label;
+    }
+
+    static JComboBox<String> createCombobox (ArrayList<String> content){
+        JComboBox<String> cb = new JComboBox<>();
+
+        for (String addContent : content) {
+            cb.addItem(addContent);
+        }
+        return cb;
+    }
+
+    static JTextField createTextField (){
+        return new JTextField();
+    }
+
+    static JButton createButton(String txt){
+        return new JButton(txt);
     }
 
     static JFrame ConfigureFrame() {
         JFrame f = new JFrame();
 
-        AddElements(f);
+        ConfigureLayout(f);
 
         // 400 width and 500 height
-        f.setSize(500, 600);
+        f.setSize(550, 400);
 
         // using no layout managers
         f.setLayout(null);
@@ -69,5 +107,6 @@ public class App {
     static void ButtonPressed() {
         String selectedCountry = (String) countryBox.getSelectedItem();
         int workers = Integer.parseInt(workerCount.getText().length() > 0 ? workerCount.getText() : "1");
+        fileManager.writeWorkersToCSV(selectedCountry, workers);
     }
 }
