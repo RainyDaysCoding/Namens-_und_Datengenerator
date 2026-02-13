@@ -16,7 +16,8 @@ public class FileManager {
     RandomNumberGenerator rng;
     ArrayList<CountryData> countryData;
 
-    String fileName = "PersonalData.json";
+    String fileNameIntelliJ = "main/resources/PersonalData.json";
+    String fileNameVSCode = "PersonalData.json";
     String directoryPath = "C:\\GeneratorData";
     String savePath = "C:\\GeneratorData\\output";
 
@@ -96,8 +97,11 @@ public class FileManager {
     }
 
     String ReadFile() {
+        InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileNameVSCode);
 
-        InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileName);
+        if (inputStream == null){
+            inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream(fileNameIntelliJ);
+        }
 
         Scanner s = new Scanner(inputStream).useDelimiter("\\A");
         String result = s.hasNext() ? s.next() : "";
