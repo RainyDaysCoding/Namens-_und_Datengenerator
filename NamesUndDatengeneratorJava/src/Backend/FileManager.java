@@ -90,9 +90,6 @@ public class FileManager {
             ArrayList<String> streets = ConvertJSONArrayToArrayList(new JSONArray(new JSONObject(obj.get(country).toString()).get("streets").toString()));
             countryData.add(new CountryData(country, surnames, names, roles, cities, streets));
         }
-
-        // DEBUG - REMOVE BEFORE LAUNCH
-        // writeWorkersToCSV("Deutschland", 15);
     }
 
     String ReadFile() {
